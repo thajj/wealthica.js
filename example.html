@@ -13,7 +13,7 @@
 </head>
 <body>
   <h3>TEST wealthsimple EXPORTER pour TraderVue</h3>
-  <p>Try some of the actions below:</p>
+  <!-- <p>Try some of the actions below:</p> -->
   <p>
     <button type="button" disabled="disabled" id="getTransactions">List Transactions</button>
     <button type="button" disabled="disabled" id="getPositions">List Positions</button>
@@ -60,6 +60,8 @@
 
         addon.api.getTransactions(getQueryFromOptions(addonOptions)).then(function (response) {
           $('#result').html('List Transactions Result:<br><code>' + JSON.stringify(response) + '</code>');
+
+
         }).catch(function (err) {
           $('#result').html('Error:<br><code>' + err + '</code>');
         }).finally(function () {

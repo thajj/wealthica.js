@@ -86,9 +86,9 @@
                     + json[key].origin_type + '","'
                     + json[key].quantity + '","'
 
-                    + (json[key].currency_amount /  json[key].quantity )+ '","'
+                    + ((json[key].currency_amount /  json[key].quantity ) * -1)+ '","'
                     + formatDate(json[key].processing_date) + '","'
-                    + json[key].currency_amount + '","'
+                    + (json[key].currency_amount * -1) + '","'
                     + formatDate(json[key].settlement_date) + '","'
                     + json[key].symbol != undefined ? json[key].fee : 0 + '","'
                     + json[key].investment + '",<br/>';

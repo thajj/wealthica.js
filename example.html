@@ -19,7 +19,11 @@
     <button type="button" disabled="disabled" id="getPositions">List Positions</button>
     <!-- <button type="button" disabled="disabled" id="addTransaction">Add Transaction</button> -->
     <!-- <button type="button" disabled="disabled" id="saveData">Save Data</button> -->
+
+<button onclick="myFunction()">Copy text</button>
   </p>
+
+
   <!-- <textarea id="data" rows="8" cols="100"></textarea> -->
   <div id="result"></div>
 
@@ -39,6 +43,21 @@
             day = '0' + day;
     //return date;
         return [year, month, day].join('/');
+    }
+
+    function myFunction() {
+      /* Get the text field */
+      var copyText = document.getElementById("result");
+
+      /* Select the text field */
+      copyText.select();
+      copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+      /* Copy the text inside the text field */
+      document.execCommand("copy");
+
+      /* Alert the copied text */
+      alert("Copied the text: " + copyText.value);
     }
 
 
@@ -70,6 +89,7 @@
           $('#addTransaction').removeAttr('disabled');
         });
       });
+
 
       $('#getTransactions').on('click', function () {
         $(this).attr('disabled', 'disabled');

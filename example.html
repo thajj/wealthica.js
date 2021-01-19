@@ -38,7 +38,7 @@
         if (day.length < 2)
             day = '0' + day;
     //return date;
-        return [year, month, day].join('/');
+        return [day, month, year].join('/');
     }
 
 
@@ -79,6 +79,9 @@
           var res= '"Symbol","Action","Fill qty","Fill price","Exec time","Total value","Time placed","Commission","Account",<br/>';
           for (var key in json) {
                  if (json.hasOwnProperty(key)) {
+
+                   if(json[key].symbol != "undefined") {
+
                  	res += '"' + json[key].symbol + '","'
                     + json[key].origin_type + '","'
                     + json[key].quantity + '","'
@@ -90,7 +93,7 @@
                     + json[key].fee + '","'
                     + json[key].investment + '",<br/>';
 
-
+}
                   	//          alert(json[key].id);
           //          alert(json[key].msg);
                  }

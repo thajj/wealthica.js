@@ -86,7 +86,7 @@
                     + json[key].origin_type + '","'
                     + json[key].quantity + '","'
 
-                    + ((json[key].currency_amount /  json[key].quantity ) * -1)+ '","'
+                    + (json[key].currency_amount /  json[key].quantity ))+ '","'
                     + formatDate(json[key].processing_date) + '","'
                     + (json[key].currency_amount * -1) + '","'
                     + formatDate(json[key].settlement_date) + '","'

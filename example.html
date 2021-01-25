@@ -71,12 +71,12 @@
         });
       });
 
+var test;
       $('#getTransactions').on('click', function () {
         $(this).attr('disabled', 'disabled');
 
         addon.api.getTransactions(getQueryFromOptions(addonOptions)).then(function (json) {
           test = json;
-          window.test = json;
 
           var res= '"Symbol","Action","Fill qty","Fill price","Exec time","Total value","Time placed","Commission","Account",<br/>';
           for (var key in json) {

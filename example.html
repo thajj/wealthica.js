@@ -38,7 +38,7 @@
         if (day.length < 2)
             day = '0' + day;
     //return date;
-        return [day, month, year].join('/');
+        return [year, month, day].join('/');
     }
 
 
@@ -80,17 +80,17 @@
           for (var key in json) {
                  if (json.hasOwnProperty(key)) {
 
-                   if(json[key].symbol != undefined) {
+                   if(json[key].symbol != "undefined") {
 
                  	res += '"' + json[key].symbol + '","'
                     + json[key].origin_type + '","'
                     + json[key].quantity + '","'
 
-                    + (json[key].currency_amount /  json[key].quantity ))+ '","'
+                    + (json[key].currency_amount /  json[key].quantity )+ '","'
                     + formatDate(json[key].processing_date) + '","'
                     + json[key].currency_amount + '","'
                     + formatDate(json[key].settlement_date) + '","'
-                    + json[key].symbol != undefined ? json[key].fee : 0 + '","'
+                    + json[key].fee + '","'
                     + json[key].investment + '",<br/>';
 
 }
